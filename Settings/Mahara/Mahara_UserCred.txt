@@ -1,0 +1,13 @@
+*** Variables ***
+${invalid_usr}    bflmpsvz
+${invalid_pwd}    abcd
+${admin_usr}    Admin
+${admin_pwd}    MaharaDemo
+${student_usr}    Student
+${student_pwd}    MaharaDemo
+${learner_usr}    Learner
+${learner_pwd}    MaharaDemo
+${staff_usr}    Staff
+${staff_pwd}    MaharaDemo
+${sitestaff_usr}    Sitestaff
+${sitestaff_pwd}    MaharaDemo

@@ -1,0 +1,26 @@
+*** Settings ***
+Library    SeleniumLibrary    
+
+*** Keywords ***
+Open Browser To Mahara
+    Open Browser    https://demo.mahara.org/    chrome
+    Maximize Browser Window
+
+Login To Mahara
+    [Arguments]    ${Username}    ${Password}
+    Input Text    id=login_login_username    ${Username}
+    Input Password    name=login_password    ${Password}
+    Click Button    Login
+    
+Capture Screenshot And Close Browser
+    Capture Page Screenshot
+    Close Browser
+    
+Account Login Validation
+    Wait Until Page Contains Element    xpath=//a[@title='Profile page']
+    Page Should Contain Element    xpath=//h3[@class='panel-heading profile-block']
+    Name Validation    
+    
+Name Validation
+    ${text}    Get Text     xpath://a[@class='username']
+    Should Not Contain    ${text}    None      

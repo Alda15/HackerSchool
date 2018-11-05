@@ -1,0 +1,9 @@
+***Settings***
+Library    Dialogs
+Resource    ../Settings/Variables.txt
+
+***Keywords***
+Get Input Value and Compare
+    ${Input_Value}=    Get Value From User    Write some value:
+    Should Be Equal    ${Input_Value}    ${Expected_Value}    Test Fails.
+    Log    Test OK

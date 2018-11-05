@@ -1,0 +1,2 @@
+***Variables***
+${Expected_Value}=    Ahoj
