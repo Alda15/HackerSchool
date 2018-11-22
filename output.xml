@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181112 18:46:00.419">
+<suite id="s1" name="Hs" source="D:\Dokumenty\Programovani\Projekty\Eclipse\hs">
+<suite id="s1-s1" name="Tests" source="D:\Dokumenty\Programovani\Projekty\Eclipse\hs\Tests">
+<suite id="s1-s1-s1" name="Workshop 5" source="D:\Dokumenty\Programovani\Projekty\Eclipse\hs\Tests\Workshop_5">
+<suite id="s1-s1-s1-s1" name="Workshop" source="D:\Dokumenty\Programovani\Projekty\Eclipse\hs\Tests\Workshop_5\Workshop">
+<suite id="s1-s1-s1-s1-s1" name="Api Tests" source="D:\Dokumenty\Programovani\Projekty\Eclipse\hs\Tests\Workshop_5\Workshop\Api_Tests.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Simple Get">
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>/users/1</arg>
+</arguments>
+<status status="PASS" starttime="20181112 18:46:01.406" endtime="20181112 18:46:01.721"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body name</arg>
+<arg>Leanne Graham</arg>
+</arguments>
+<status status="PASS" starttime="20181112 18:46:01.721" endtime="20181112 18:46:01.721"></status>
+</kw>
+<kw name="Output" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response</arg>
+<arg>${OUTPUTDIR}/json/response.json</arg>
+</arguments>
+<msg timestamp="20181112 18:46:01.721" level="FAIL">Error outputting to file 'D:\Dokumenty\Programovani\Projekty\Eclipse\hs/json/response.json':
+[Errno 2] No such file or directory: 'D:\\Dokumenty\\Programovani\\Projekty\\Eclipse\\hs/json/response.json'</msg>
+<status status="FAIL" starttime="20181112 18:46:01.721" endtime="20181112 18:46:01.721">Error outputting to file 'D:\Dokumenty\Programovani\Projekty\Eclipse\hs/json/response.json':
+[Errno 2] No such file or directory: 'D:\\Dokumenty\\Programovani\\Projekty\\Eclipse\\hs/json/response.json'</status>
+</kw>
+<status status="FAIL" starttime="20181112 18:46:01.406" endtime="20181112 18:46:01.721" critical="yes">Teardown failed:
+Error outputting to file 'D:\Dokumenty\Programovani\Projekty\Eclipse\hs/json/response.json':
+[Errno 2] No such file or directory: 'D:\\Dokumenty\\Programovani\\Projekty\\Eclipse\\hs/json/response.json'</status>
+</test>
+<status status="FAIL" starttime="20181112 18:46:01.095" endtime="20181112 18:46:01.721"></status>
+</suite>
+<status status="FAIL" starttime="20181112 18:46:01.095" endtime="20181112 18:46:01.721"></status>
+</suite>
+<status status="FAIL" starttime="20181112 18:46:01.094" endtime="20181112 18:46:01.721"></status>
+</suite>
+<status status="FAIL" starttime="20181112 18:46:01.089" endtime="20181112 18:46:01.721"></status>
+</suite>
+<status status="FAIL" starttime="20181112 18:46:01.067" endtime="20181112 18:46:01.721"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Hs">Hs</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Tests">Hs.Tests</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Workshop 5">Hs.Tests.Workshop 5</stat>
+<stat pass="0" fail="1" id="s1-s1-s1-s1" name="Workshop">Hs.Tests.Workshop 5.Workshop</stat>
+<stat pass="0" fail="1" id="s1-s1-s1-s1-s1" name="Api Tests">Hs.Tests.Workshop 5.Workshop.Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

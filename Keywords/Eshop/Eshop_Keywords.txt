@@ -1,0 +1,93 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library    Collections    
+Variables	../../Objects/Eshop/Eshop_Objects.py
+
+*** Variables ***
+${url}	http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation
+${browser}	firefox
+
+*** Keywords ***
+Open Browser and Go to URL
+    [Arguments]    ${browser}    ${url}
+    Open Browser    ${url}    browser=${browser}
+    Maximize Browser Window
+    
+Open Eshop Registration Form
+    [Arguments]    ${email}
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Input Text    ${Input_email_create}    ${email}
+    Click Button    ${Button_open_sign_in_form}
+    Wait Until Page Contains Element    ${Button_register}
+    
+Fill In Registration Form
+    [Arguments]    &{test_data}
+    Input Text    ${Input_firstname}    ${test_data['firstname']}
+    Input Text    ${Input__lastname}    ${test_data['lastname']}
+    Input Text    ${Input_password}    ${test_data['password']}
+    Input Text    ${Input_address1}    ${test_data['address']}
+    Input Text    ${Input_city}    ${test_data['city']}
+    Select From List By Label    ${Select_country}    ${test_data['country']}
+    Input Text    ${Input_postcode}    ${test_data['postcode']}
+    Input Text    ${Input_phone}   ${test_data['phone']}
+    Input Text    ${Input_mobile_phone}   ${test_data['phone_mobile']}
+    
+Capture Screenshot And Close Browser
+    Capture Page Screenshot    
+    Close Browser
+    
+Go To Category
+    [Arguments]                            ${category} 
+    Wait Until Page Contains Element       ${category}
+    Click Element                          ${category}
+    
+Go To ${category} And Check Products
+    Go To Category    ${categories['${category}']}
+    Eshop Page Should Contain    ${categories['${category}']}    ${txt_category_title}
+    ${price_tags}=    Get All Texts    ${txt_price_tag_text}
+    Products Should Have Price Tag    ${price_tags} 
+    Capture Page Screenshot
+    
+Eshop Page Should Contain
+    [Arguments]                         @{elements}
+    :FOR    ${element}    IN            @{elements}
+    \    Page Should Contain Element    ${element}
+        
+Products Should Have Price Tag
+    [Arguments]    ${price_tags}
+    :FOR    ${price_tag}    IN    @{price_tags}
+    \    Should Match Regexp    ${price_tag}    ${price_tag_mask}
+        
+Get All Texts
+    [Arguments]    ${field}
+    ${count}=    Get Element Count    ${field}
+    ${all_texts}=    Create List
+    :FOR    ${index}    IN RANGE    ${START_INDEX}    ${count} + 1
+    \    ${text}=    Get Text    xpath=(${field})[${index}]
+    \    Append To List    ${all_texts}    ${text}
+    [Return]    ${all_texts}
+    
+Select Sort Criterion By Label
+    [Arguments]    ${sort_criterion}
+    Select From List By Label    ${dropdown_sort}    ${sort_criterion}
+    ${is_spinner_on_page}=    Get Element Count    ${spinner_on_page}
+    ${int_spinner_on_page}=    Convert To Integer    1
+    Run Keyword If    ${is_spinner_on_page} == ${int_spinner_on_page}    Wait Until Keyword Succeeds    15s    300ms    Page Does Not Contain Spinner    
+    Run Keyword If    ${is_spinner_on_page} != ${int_spinner_on_page}    Wait Until Page Contains Element       ${centre_column}
+
+Go To Information Page
+    [Arguments]    ${info_page_link}
+    Click Link    ${info_page_link}
+    Wait Until Page Contains Element    ${centre_column} 
+
+Information Page Should Contain Title
+    [Arguments]    ${info_page_link}    ${title}
+    Go To Information Page    ${info_page_link}
+    Title Should Be    ${title}
+    Capture Page Screenshot    
+    Go Back    
+    
+Page Does Not Contain Spinner
+    ${spinner_count}=    Get Element Count    ${spinner_not_present}    
+    Should Be Equal    ${spinner_count}    0 

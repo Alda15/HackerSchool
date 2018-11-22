@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181112 19:47:29.388">
+<suite id="s1" name="Api Tests" source="d:\Dokumenty\Programovani\Projekty\Eclipse\hs\Tests\Workshop_5\Workshop\Api_Tests.robot">
+<test id="s1-t1" name="Add New Users">
+<kw name="${user} IN [ @{new_test_users} ]" type="for">
+<kw name="${user} = {&quot;id&quot;:11,&quot;name&quot;:&quot;Diego Maradona&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:29.692" endtime="20181112 19:47:30.263"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:30.263" endtime="20181112 19:47:30.264"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:29.692" endtime="20181112 19:47:30.264"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:29.692" endtime="20181112 19:47:30.264"></status>
+</kw>
+<kw name="${user} = {&quot;id&quot;:12,&quot;name&quot;:&quot;George Best&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:30.264" endtime="20181112 19:47:30.750"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:30.750" endtime="20181112 19:47:30.752"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:30.264" endtime="20181112 19:47:30.753"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:30.264" endtime="20181112 19:47:30.753"></status>
+</kw>
+<kw name="${user} = {&quot;id&quot;:13,&quot;name&quot;:&quot;Johann Cruyff&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:30.754" endtime="20181112 19:47:31.187"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:31.188" endtime="20181112 19:47:31.190"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:30.753" endtime="20181112 19:47:31.190"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:30.753" endtime="20181112 19:47:31.190"></status>
+</kw>
+<kw name="${user} = {&quot;id&quot;:14,&quot;name&quot;:&quot;Pele&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:31.192" endtime="20181112 19:47:31.657"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:31.658" endtime="20181112 19:47:31.660"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:31.191" endtime="20181112 19:47:31.660"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:31.191" endtime="20181112 19:47:31.660"></status>
+</kw>
+<kw name="${user} = {&quot;id&quot;:15,&quot;name&quot;:&quot;George Weah&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:31.662" endtime="20181112 19:47:32.120"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:32.120" endtime="20181112 19:47:32.123"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:31.661" endtime="20181112 19:47:32.123"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:31.661" endtime="20181112 19:47:32.123"></status>
+</kw>
+<kw name="${user} = {&quot;id&quot;:16,&quot;name&quot;:&quot;David Seaman&quot;}" type="foritem">
+<kw name="Add New User">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:32.125" endtime="20181112 19:47:32.537"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>request body</arg>
+<arg>${OUTPUTDIR}/json/request.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:32.537" endtime="20181112 19:47:32.541"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:32.124" endtime="20181112 19:47:32.541"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:32.123" endtime="20181112 19:47:32.541"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:29.692" endtime="20181112 19:47:32.542"></status>
+</kw>
+<kw name="Output" library="REST" type="teardown">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response</arg>
+<arg>${OUTPUTDIR}/json/response.json</arg>
+</arguments>
+<status status="PASS" starttime="20181112 19:47:32.551" endtime="20181112 19:47:32.554"></status>
+</kw>
+<status status="PASS" starttime="20181112 19:47:29.691" endtime="20181112 19:47:32.555" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20181112 19:47:29.389" endtime="20181112 19:47:32.563"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Api Tests">Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -23,4 +23,5 @@ Account Login Validation
     
 Name Validation
     ${text}    Get Text     xpath://a[@class='username']
-    Should Not Contain    ${text}    None      
+    Should Not Contain    ${text}    None  
+    
