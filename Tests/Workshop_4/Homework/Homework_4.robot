@@ -14,7 +14,7 @@ Category Check
 Sort Products By Price Highest First
     :FOR    ${category}    IN    @{categories.keys()}
     \    Go To Category    ${categories['${category}']}
-    \    Select Sort Criterion By Label   Price: Highest first
+    \    Select Sort Crit By Label   Price: Highest first
         
 Information Links Are Accessible
     [Setup]    Run Keywords     Open Browser and Go to URL    ${BROWSER}    ${URL}    AND    Go To Category    ${categories['Women']}

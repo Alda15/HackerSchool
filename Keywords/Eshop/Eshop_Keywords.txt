@@ -68,7 +68,7 @@ Get All Texts
     \    Append To List    ${all_texts}    ${text}
     [Return]    ${all_texts}
     
-Select Sort Criterion By Label
+Select Sort Crit By Label
     [Arguments]    ${sort_criterion}
     Select From List By Label    ${dropdown_sort}    ${sort_criterion}
     ${is_spinner_on_page}=    Get Element Count    ${spinner_on_page}
